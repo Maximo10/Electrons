@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Máquina Expendedora</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  /* --- CONFIGURACIÓN GENERAL --- */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #e2e2e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.vending-machine {
+  display: flex;
+  background: #b11616;
+  padding: 30px;
+  border-radius: 18px;
+  gap: 40px;
+}
+
+/* --- PANEL DE PRODUCTOS --- */
+
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.product {
+  background: #333;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
+.product img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.code {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.price {
+  display: block;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* --- PANEL DE CONTROLES --- */
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  color: white;
+}
+
+.title {
+  margin: 0;
+  font-size: 26px;
+  text-align: center;
+}
+
+.display {
+  background: #d6d6d6;
+  color: #b11616;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  min-height: 70px;
+}
+
+.section {
+  background: #111;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.code-screen,
+.money-screen {
+  background: #d6d6d6;
+  color: #b11616;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* --- BOTONES --- */
+
+.btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.buttons-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.buttons-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Colores */
+.code-btn,
+.money-btn {
+  background: #000;
+  color: white;
+}
+
+.action-btn.green {
+  background: green;
+  color: white;
+}
+
+.action-btn.red {
+  background: #b30000;
+  color: white;
+}
+
+.full {
+  width: 100%;
+}
+
+</style>
+<body>
+
+  <div class="vending-machine">
+
+    <!-- PANEL IZQUIERDO: PRODUCTOS -->
+    <div class="products">
+      <div class="product">
+        <img src="https://via.placeholder.com/140x140?text=A1">
+        <span class="code">A1</span>
+        <span class="price">$0.50</span>
+      </div>
+
+      <div class="product">
+        <img src="https://via.placeholder.com/140x140?text=B1">
+        <span class="code">B1</span>
+        <span class="price">$0.75</span>
+      </div>
+
+      <div class="product">
+        <img src="https://via.placeholder.com/140x140?text=C1">
+        <span class="code">C1</span>
+        <span class="price">$1.00</span>
+      </div>
+    </div>
+
+    <!-- PANEL DERECHO: CONTROLES -->
+    <div class="controls">
+
+      <h1 class="title">Máquina Expendedora</h1>
+      <div class="display" id="display">Inserte dinero y seleccione un producto</div>
+
+      <!-- Código -->
+      <div class="section">
+        <h2>Seleccionar Código</h2>
+        <div class="code-screen" id="code-screen"></div>
+
+        <div class="buttons-row">
+          <button class="btn code-btn">A</button>
+          <button class="btn code-btn">B</button>
+          <button class="btn code-btn">C</button>
+        </div>
+
+        <div class="buttons-row">
+          <button class="btn code-btn">1</button>
+          <button class="btn code-btn">2</button>
+          <button class="btn code-btn">3</button>
+        </div>
+
+        <div class="buttons-row">
+          <button class="btn code-btn">4</button>
+          <button class="btn code-btn">5</button>
+        </div>
+
+        <div class="buttons-row">
+          <button class="btn action-btn green" id="purchase">Comprar</button>
+          <button class="btn action-btn red" id="clear">Limpiar</button>
+        </div>
+      </div>
+
+      <!-- Dinero -->
+      <div class="section">
+        <h2>Insertar Dinero</h2>
+        <div class="money-screen" id="money-screen">$0.00</div>
+
+        <div class="buttons-column">
+          <button class="btn money-btn" data-value="0.05">$0.05</button>
+          <button class="btn money-btn" data-value="0.10">$0.10</button>
+          <button class="btn money-btn" data-value="0.25">$0.25</button>
+        </div>
+
+        <button class="btn action-btn red full" id="return-money">Devolver Dinero</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
+<html>
+    <head>
+        <title>Máquina Expendedora</title>
+    </head>
+    <style>
+        body {
+            background: whitesmoke;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }   
+        .maquina {
+            width: 350px;
+            background: rgb(238, 49, 49);
+            border: 4px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: flex;
+            gap: 15px;
+        }   
+        .productos {
+            flex: 1;
+            background: #fff;
+            border: 3px solid black;
+            border-radius: 10px;
+            height: 500px;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 60px;
+            gap: 10px;
+        }   
+        .hueco {
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+        .hueco img {
+            display: block;
+            margin: auto;
+            max-height: 100%;
+        }
+        .controlador {
+            width: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .botmon {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:2px;
+            height: 80px;
+            margin-top: 20px;
+            margin-bottom: 10px;            
+        } 
+        .botmon button {
+            padding: 5px;
+            background: white;
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .pantalla {
+            height: 40px;
+            background: black;
+            border: 2px solid whitesmoke;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }   
+        .botones {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap:2px;
+            height: 120px;
+        }   
+        .botones button {
+            padding: 10px;
+            background: white;
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+        }   
+        .expendedora {
+            margin-top: 10px;
+            background: black;
+            border: 2px solid whitesmoke;
+            border-radius: 5px;
+            height: 40px;
+        }   
+        .expendedora {
+            margin-top: 20px;
+            height: 60px;
+        }
+    </style>    
+    <body>
+        <div class="maquina">
+            <!--Derecha-->
+            <div class="productos">
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+                <div class="hueco"><img src="image.png" height="50px"></div>
+            </div>
+            <!--Izquierda-->
+            <div class="controlador">
+                <div class="pantalla"></div>
+                <div class="botones">
+                    <button>1</button><button>2</button><button>3</button>
+                    <button>4</button><button>5</button><button>6</button>
+                    <button>7</button><button>8</button><button>9</button>
+                    <button>*</button><button>0</button><button>#</button>
+                </div>
+                <div class="botmon">
+                    <button>0.05€</button><button>0.10€</button><button>0.20€</button>
+                    <button>0.50€</button><button>1€</button><button>2€</button>
+                    <button>5€</button><button>10€</button><button>20€</button>
+                </div>
+                <div class="expendedora"></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Máquina Expendedora</title>
+        <link rel="stylesheet" href="style.css">
+    </head> 
+    <body>        
+        <div class="maquina">
+            <!--Derecha-->
+            <div class="productos">
+                <div class="hueco"><img src="image.png" height="70px"><h3>A1</h3></div>
+                <div class="hueco"><img src="image.png" height="70px"><h3>A2</h3></div>
+                <div class="hueco"><img src="image.png" height="70px"><h3>A3</h3></div>
+
+                <div class="hueco"><img src="image.png" height="70px"><h3>B1</h3></div>
+                <div class="hueco"><img src="image.png" height="70px"><h3>B2</h3></div>
+                <div class="hueco"><img src="image.png" height="70px"><h3>B3</h3></div>
+
+                <div class="hueco"><img src="image.png" height="70px"><h3>C1</h3></div>
+                <div class="hueco"><img src="image.png" height="70px"><h3>C2</h3></div>
+                <div class="hueco"><img src="image.png" height="70px"><h3>C3</h3></div>
+
+                <div class="hueco"><img src="image.png" height="70px"><h3>D1</h3></div>
+                <div class="hueco"><img src="image.png" height="70px"><h3>D2</h3></div>
+                <div class="hueco"><img src="image.png" height="70px"><h3>D3</h3></div>
+
+                <div class="hueco"><img src="image.png" height="70px"><h3>E1</h3></div>
+                <div class="hueco"><img src="image.png" height="70px"><h3>E2</h3></div>
+                <div class="hueco"><img src="image.png" height="70px"><h3>E3</h3></div>
+            </div>
+            <!--Izquierda-->
+            <div class="controlador">
+                <!-- PANTALLA -->
+                <div class="pantalla">Panatalla</div>
+                <!-- BOTONES -->
+                <div class="grup_botones">
+                    <!-- Letras -->
+                    <div class="let_botones">
+                        <button id="letra_a">A</button><button id="letra_b">B</button><button id="letra_c">C</button><button id="letra_d">D</button><button id="letra_e">E</button>
+                    </div>
+                    <!-- Números -->
+                    <div class="num_botones">
+                        <button id="bot_1">1</button><button id="bot_2">2</button><button id="bot_3">3</button>
+                        <button id="bot_4">4</button><button id="bot_5">5</button><button id="bot_6">6</button>
+                        <button id="bot_7">7</button><button id="bot_8">8</button><button id="bot_9">9</button>
+                        <button id="Acep">Acep</button><button>0</button><button id="Devo">-></button>                        
+                    </div>
+                    <!-- DEVOLVER -->
+                    <div class="debol">
+                        <!--boton para devolver el dinero-->
+                        <button>Devolver</button>
+                    </div>
+                </div>
+                <!-- ADMIN -->
+                <div class="admin">
+                    <button>Admin🔑</button>
+                </div>
+                <!-- DINERO -->
+                <div class="dinero">
+                    <button id="mone_005">0.05€</button><button id="mone_010">0.10€</button><button id="mone_020">0.20€</button>
+                    <button id="mone_050">0.50€</button><button id="mone_1">1€</button><button id="mone_2">2€</button>
+                    <button id="bill_5">5€</button><button id="bill_10">10€</button><button id="bill_20">20€</button>
+                </div>
+            </div>
+            <div class="boca_produc">Boca Salida De Productos</div>
+        </div>
+        <!-- Renderer script -->
+        <script src="renderer.js"></script>
+    </body>
+</html>

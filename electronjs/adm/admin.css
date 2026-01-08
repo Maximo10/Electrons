@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #333;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.admin-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.panel {
+    border: 2px solid #555;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: #444;
+}
+
+.panel h2 {
+    margin-top: 0;
+}
+
+.formulario input, .formulario button {
+    margin: 5px 0;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #222;
+}
+
+.formulario button {
+    cursor: pointer;
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+}
+
+.formulario button:hover {
+    background-color: orangered;
+}
+
+.grid-productos div, .grid-monedas div {
+    padding: 6px;
+    border-bottom: 1px solid #666;
+}

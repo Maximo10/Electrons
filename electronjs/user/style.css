@@ -1,0 +1,195 @@
+body{
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('');
+}
+.maquina{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;          
+    width: 570px;
+    background: rgb(197, 0, 0);
+    border: 4px solid black;
+    border-radius: 12px;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,1);
+}
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 120px;
+    gap: 10px;            
+    background:lightslategrey;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.hueco {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: rgb(238, 238, 238);
+    padding: 5px;
+}
+.hueco h3 {
+    margin: 0;
+    font-size: 16px;
+    color:black;
+}
+/*Sección Izquierda*/
+.controlador {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: black;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.pantalla {
+    display: flex;
+    justify-content: center;
+    align-items: center;            
+    height: 50px;
+    background: black;
+    color: lime;
+    font-size: 18px;
+    border: 2px solid green;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+.grup_botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0 20px 0;
+    background-color:rgb(102, 102, 102);
+    border-radius: 8px;
+    padding: 10px;
+}
+.let_botones {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+.num_botones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+.num_botones button:hover,.let_botones button:hover {
+    background-color: lightgray;
+    color: black;
+}
+.debol{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.debol button {
+    padding: 8px;
+    background: red;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+}
+.debol button:hover {
+    background: lightcoral;
+    color: black;
+}
+/*Botones Aceptar y Devolver*/
+#Acep {
+    background-color: green;
+    color: white;
+}
+#Acep:hover {
+    background-color: lightgreen;
+    color: black;
+}
+#Devo {
+    background-color:orange;
+    color: white;
+}
+#Devo:hover {
+    background-color: orangered;
+    color: black;
+}
+/*Botón Admin*/
+.admin {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    background-color:rgb(102, 102, 102);
+    border-radius: 8px;
+    padding: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.admin button {
+    padding: 8px;
+    background: orange;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.admin button:hover {
+    background: orangered;
+    color: black;
+}
+/*Estilo común de botones*/
+.let_botones button,.num_botones button {
+    padding: 8px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.dinero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+    margin-top: 11px;
+    background-color:rgb(102, 102, 102);
+    border-radius: 8px;
+    padding: 10px;            
+}
+.dinero button {
+    padding: 8px;
+    background: gold;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.dinero button:hover {
+    background: yellow;
+}
+/*Boca de salida de productos*/
+.boca_produc {
+    display: flex;
+    justify-content: center;
+    align-items: center;            
+    grid-column: span 2;
+    height: 100px;
+    background: black;
+    border: 3px solid whitesmoke;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+}
